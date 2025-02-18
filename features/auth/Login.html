@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="navbar">DIMA'S LMS</div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="login(event)">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="Enter your email" required 
+                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required minlength="6">
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="menu">
+            <a href="register.html">Don't have an account? Register</a>
+        </div>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault(); // Prevents page reload
+            
+            let email = document.getElementById("login-email").value;
+            let password = document.getElementById("password").value;
+
+            // Simulated login check (replace with real authentication)
+            if (email === "user@example.com" && password === "password123") {
+                alert("Login successful!");
+                window.location.href = "dashboard.html"; // Redirect to dashboard
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
