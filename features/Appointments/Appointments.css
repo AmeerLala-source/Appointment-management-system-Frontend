@@ -1,0 +1,133 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar styling */
+nav {
+    width: 100%;
+    height: 60px; /* Ensure consistent height */
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black; /* Change text color to black */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #6e8efb; /* Change hover color if needed */
+}
+
+
+/* Wrapper - Holds both the image and container */
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px); /* Full height minus navbar */
+}
+
+/* Image on the left */
+.banner-img {
+    flex: 1; /* Ensures equal size */
+    height: 100%;
+    object-fit: cover; /* Covers the entire section */
+}
+
+/* Container on the right */
+.container {
+    flex: 1; /* Ensures equal size */
+    height: 600px;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 12px;
+    display: block;
+    color: #555;
+    text-align: left;
+}
+
+select, 
+input {
+    width: 100%;
+    height: 45px; /* Set a fixed height */
+    padding: 10px; /* Adjust padding for uniformity */
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s;
+    font-size: 16px; /* Ensure consistent font size */
+    box-sizing: border-box; /* Prevents width issues due to padding */
+}
+
+
+select:focus, input:focus {
+    border-color: #6e8efb;
+}
+
+button {
+    background: #6e8efb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+    
+    /* Centering */
+    display: block; /* Ensures full-width behavior doesn't interfere */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+button:hover {
+    background: #5a7ffb;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}

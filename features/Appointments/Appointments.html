@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book a Doctor Appointment</title>
+    <link rel="stylesheet" href="Appointments.css">
 </head>
+
 <body>
-    <script src="./Appointments.js"/>
+    <nav>
+        <ul>
+            <li><a href="../Home/home.html">Home</a></li>
+            <li><a href="../Appointments/Appointments.html">Book an Appointment</a></li>
+            <li><a href="../Appointments/appointmentdetails.html">My Appointments</a></li>
+            <li><a href="../contact-us/contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <img src="doctor-patient.jpg" alt="Banner Image" class="banner-img">
+        <div class="container">
+            <h2>Book an Appointment</h2>
+            <form>
+                <label for="specialist">Choose Specialist:</label>
+                <select id="specialist" required>
+                    <option value="">Select</option>
+                    <option value="dentist">Dentist</option>
+                    <option value="cardiologist">Cardiologist</option>
+                    <option value="neurologist">Neurologist</option>
+                    <option value="orthopedic">Orthopedic</option>
+                </select>
+
+                <label for="hour">Choose Hour:</label>
+                <select id="hour" required>
+                    <option value="">Select</option>
+                    <option value="08:00">08:00 AM</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">01:00 PM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                    <option value="17:00">05:00 PM</option>
+                </select>
+
+
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" required>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+    <script src="./Appointments.js"></script>
 </body>
+
 </html>
