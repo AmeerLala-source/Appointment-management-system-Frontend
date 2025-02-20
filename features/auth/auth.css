@@ -40,7 +40,7 @@ body {
 /* Right Side - Image */
 .image-container {
     width: 50%;
-    background: url('loginBackground.jpeg') no-repeat center center/cover;
+    background: url('https://res.cloudinary.com/dcpmiuvdb/image/upload/v1740070634/czyjqqaw11o8yrn9hcj6.jpg') no-repeat center center/cover;
     background-color: #6c5ce7;
 }
 
