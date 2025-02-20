@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Details</title>
+    <link rel="stylesheet" href="Appointments.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="../Home/home.html">Home</a></li>
+            <li><a href="../Appointments/Appointments.html">Book an Appointment</a></li>
+            <li><a href="../Appointments/appointmentdetails.html">My Appointments</a></li>
+            <li><a href="../contact-us/contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>My Appointments</h1>
+    </header>
+
+
+    
+    <main>
+        <section id="appointments-container">
+            <h2>Your Booked Appointments</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Specialist</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="appointments-list">
+                    <!-- Appointments will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="appointmentDetails.js"></script>
+</body>
+</html>
