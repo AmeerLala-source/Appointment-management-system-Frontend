@@ -1,4 +1,3 @@
-
 document.querySelector("form").addEventListener("submit", async function(event) {
     event.preventDefault();
 
@@ -17,28 +16,30 @@ document.querySelector("form").addEventListener("submit", async function(event) 
         dateTime: dateTime
     };
 
-    // Get token from localStorage or sessionStorage (assuming authentication is handled)
-    const token = localStorage.getItem("token"); // Adjust if using a different storage method
+    const token = localStorage.getItem("token"); // Retrieve auth token
 
     try {
         const response = await fetch("http://localhost:5000/api/appointments", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}` // Include auth token
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(appointmentData)
         });
 
+        const data = await response.json(); // Get response JSON
+
         if (response.ok) {
-            alert("Appointment booked successfully!");
+            alert("✅ Appointment booked successfully!");
+
+            // Redirect to the appointment details page with the appointment ID
+            window.location.href = `AppointmentDetails.html?id=${data.appointment._id}`;
         } else {
-            const errorData = await response.json();
-            alert(`Failed to book appointment: ${errorData.message || "Unknown error"}`);
+            alert(`❌ Failed to book appointment: ${data.message || "Unknown error"}`);
         }
     } catch (error) {
         console.error("Error:", error);
-        alert("Error booking appointment.");
+        alert("❌ Error booking appointment.");
     }
 });
-

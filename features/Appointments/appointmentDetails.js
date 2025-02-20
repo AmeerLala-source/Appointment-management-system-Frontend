@@ -49,7 +49,6 @@ function displayAppointments(appointments) {
                 <td>${medicalField}</td>
                 <td>${formattedDate}</td>
                 <td>${formattedTime}</td>
-                <td>Booked</td>
                 <td><button class="cancel-btn" data-id="${_id}">Cancel</button></td>
             </tr>
         `;
