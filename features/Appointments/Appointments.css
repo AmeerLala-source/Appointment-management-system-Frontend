@@ -131,3 +131,95 @@ button:hover {
 button:active {
     transform: translateY(0);
 }
+
+/* Styling for the entire table */
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: 20px auto; /* Centers the table horizontally */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+/* Styling for table headers */
+th {
+    background-color: #6e8efb;  
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Ensure the table body cells have matching width with the header */
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2; /* Light border for clean separation */
+}
+
+td {
+    background-color: #fff;
+    font-size: 15px;
+    color: #333;
+    border-left: 1px solid #f2f2f2;
+}
+
+td:first-child {
+    border-left: none;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+/* Apply hover effect to entire row (including buttons) */
+tr:hover {
+    background-color: #e6f2ff;
+    cursor: pointer;
+    transform: translateY(-2px); /* Optional: small effect on row hover */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+tr:hover td {
+    background-color: inherit; /* Ensure td inherits hover background */
+}
+
+/* Button styling */
+td button {
+    background-color: #6e8efb;
+    color: white;
+    border: none;
+    padding: 15px 30px; 
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effects for buttons */
+td button:hover {
+    background-color: #5a7ffb;
+    transform: translateY(-2px);
+}
+
+td button:active {
+    transform: translateY(0);
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+}
+
+
