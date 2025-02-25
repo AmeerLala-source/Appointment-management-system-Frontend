@@ -1,0 +1,210 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Navbar Styling */
+nav {
+    width: 100%;
+    height: 60px; /* Fixed height for the navbar */
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black; /* Change text color to black */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #6e8efb; /* Change hover color if needed */
+}
+
+/* Main Content Container */
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 80px auto 20px; /* Add margin to account for the fixed navbar */
+    height: calc(100vh - 100px); /* Adjust height to fit within viewport */
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #4a90e2;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Chat History Container */
+#chat-container {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9fafb;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+#chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-message,
+.ai-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    position: relative;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.ai-message {
+    align-self: flex-start;
+    background-color: #eaeaea;
+    color: #333;
+}
+
+/* User Input Section */
+#user-input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #eaeaea;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#user-input:focus {
+    border-color: #4a90e2;
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background-color: #4a90e2;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* Chat History Section */
+#chat-history-container {
+    display: none; /* Hidden by default */
+    padding: 15px;
+    background-color: #f9fafb;
+    border-top: 1px solid #eaeaea;
+}
+
+#chat-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#chat-history-list div {
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    background-color: #eaeaea;
+}
+
+/* Dropdown Styling */
+select {
+    padding: 8px 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #4a90e2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.user-message,
+.ai-message {
+    animation: fadeIn 0.3s ease-in-out;
+}
