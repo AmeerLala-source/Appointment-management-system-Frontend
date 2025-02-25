@@ -1,0 +1,160 @@
+[19:24, 23/02/2025] سيد شبلي: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical AI Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Medical AI Chatbot</h2>
+        <div class="chat-box" id="chat-box">
+            <div class="message bot">Hi! I'm a medical assistant. How can I help you today?</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your question...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+[19:24, 23/02/2025] سيد شبلي: body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f9;
+}
+
+.chat-container {
+    width: 400px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 5px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message.bot {
+    background: #e0e0eb;
+    text-align: left;
+}
+
+.message.user {
+    background: #007bff;
+    color: white;
+    text-align: right;
+}
+[19:24, 23/02/2025] سيد شبلي: const chatBox = document.getElementById("chat-box");
+const userInput = document.getElementById("user-input");
+
+async function sendMessage() {
+    const message = userInput.value;
+    if (!message) return;
+
+    // Display user message
+    const userMessage = document.createElement("div");
+    userMessage.className = "message user";
+    userMessage.textContent = message;
+    chatBox.appendChild(userMessage);
+
+    userInput.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Fetch AI response
+    const response = await getAIResponse(message);
+
+    // Display bot response
+    const botMessage = document.createElement("div");
+    botMessage.className = "message bot";
+    botMessage.textContent = response;
+    chatBox.appendChild(botMessage);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+async function getAIResponse(message) {
+    const apiKey = "YOUR_OPENAI_API_KEY_HERE";
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": Bearer ${apiKey}
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: message }],
+            max_tokens: 100
+        })
+    });
+
+    const data = await response.json();
+    return data.choices[0].message.content;
+}
+[19:24, 23/02/2025] سيد شبلي: const chatBox = document.getElementById("chat-box");
+const userInput = document.getElementById("user-input");
+
+async function sendMessage() {
+    const message = userInput.value;
+    if (!message) return;
+
+    // Display user message
+    const userMessage = document.createElement("div");
+    userMessage.className = "message user";
+    userMessage.textContent = message;
+    chatBox.appendChild(userMessage);
+
+    userInput.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Fetch AI response
+    const response = await getAIResponse(message);
+
+    // Display bot response
+    const botMessage = document.createElement("div");
+    botMessage.className = "message bot";
+    botMessage.textContent = response;
+    chatBox.appendChild(botMessage);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+async function getAIResponse(message) {
+    const apiKey = "YOUR_OPENAI_API_KEY_HERE";
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": Bearer ${apiKey}
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [
+                { role: "system", content: "You are a medical assistant. Answer medical questions accurately and responsibly." },
+                { role: "user", content: message }
+            ],
+            max_tokens: 150
+        })
+    });
+
+    const data = await response.json();
+    return data.choices[0].message.content;
+}
