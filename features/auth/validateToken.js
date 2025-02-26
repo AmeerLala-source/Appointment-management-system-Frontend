@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/auth"; // Define your backend API URL
+const API_URL = process.env.API_BASE_URL+"/auth"; // Define your backend API URL
 
 export  async function validateToken() {
     
