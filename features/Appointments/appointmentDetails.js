@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/appointments";
+const API_URL = process.env.API_BASE_URL+"/appointments";
 
 // Function to fetch appointments from the backend
 async function fetchAppointments() {

@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot</title>
     <link rel="stylesheet" href="AiIntergration.css">
+    <script type="module">
+        import { validateToken } from "../auth/validateToken.js";
+        validateToken()
+    </script>
 </head>
 <body>
     <!-- Navbar -->
     <nav>
         <ul>
-            <li><a href="../Home/home.html">Home</a></li>
             <li><a href="../Appointments/Appointments.html">Book an Appointment</a></li>
             <li><a href="../Appointments/appointmentdetails.html">My Appointments</a></li>
-            <li><a href="../OpenAI/AiIntegration.html">Ask Us</a></li>
+            <li><a id="logout-btn">Logout</a></li>
         </ul>
     </nav>
 
@@ -37,5 +40,6 @@
         </div>
     </div>
     <script src="AiIntegration.js"></script>
+    <script src="../auth/logout.js"></script>
 </body>
 </html>

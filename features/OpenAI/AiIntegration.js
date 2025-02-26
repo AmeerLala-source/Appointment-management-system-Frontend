@@ -1,4 +1,4 @@
-const apiBaseUrl = "http://localhost:5000/api/ai";
+const apiBaseUrl = process.env.API_BASE_URL+"/ai";
 
 let userId = localStorage.getItem("userId");
 
