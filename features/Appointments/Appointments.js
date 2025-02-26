@@ -1,11 +1,4 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-        window.location.href = "../auth/Login.html";
-    }
-});
 
 document.querySelector("form").addEventListener("submit", async function(event) {
     event.preventDefault();

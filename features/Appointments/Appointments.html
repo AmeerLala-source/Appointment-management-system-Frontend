@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Doctor Appointment</title>
     <link rel="stylesheet" href="Appointments.css">
+    <script type="module">
+        import { validateToken } from "../auth/validateToken.js";
+        validateToken()
+    </script>
 </head>
 
 <body>
     <nav>
         <ul>
             <li><a href="../Appointments/appointmentdetails.html">My Appointments</a></li>
+            <li><a href="../OpenAI/AiIntegration.html">Ask Us</a></li>
             <li><a href="" id="logout-btn">Logout</a></li>
 
         </ul>

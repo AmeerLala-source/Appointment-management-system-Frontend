@@ -77,5 +77,5 @@ async function login(event) {
 }
 
 
-document.getElementById("register-form").addEventListener("submit", register);
-document.getElementById("login-form").addEventListener("submit", login);
+document.getElementById("register-form")?.addEventListener("submit", register);
+document.getElementById("login-form")?.addEventListener("submit", login);

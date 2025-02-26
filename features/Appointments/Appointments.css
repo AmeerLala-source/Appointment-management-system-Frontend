@@ -101,11 +101,11 @@ input {
 
 
 select:focus, input:focus {
-    border-color: #6e8efb;
+    border-color: #4a90e2;
 }
 
 button {
-    background: #6e8efb;
+    background: #4a90e2;
     color: white;
     border: none;
     cursor: pointer;
@@ -146,7 +146,7 @@ table {
 
 /* Styling for table headers */
 th {
-    background-color: #6e8efb;  
+    background-color: #4a90e2;  
     color: white;
     font-size: 16px;
     text-transform: uppercase;
@@ -191,7 +191,7 @@ tr:hover td {
 
 /* Button styling */
 td button {
-    background-color: #6e8efb;
+    background-color: #4a90e2;
     color: white;
     border: none;
     padding: 15px 30px; 
