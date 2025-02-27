@@ -1,10 +1,8 @@
-const API_URL = "https://appointment-management-system-backend.onrender.com/api/auth"; 
+const API_URL = "https://appointment-management-system-backend.onrender.com/"; 
 
 export  async function validateToken() {
     
     const token = localStorage.getItem("token");
-    console.log(token);
-    
 
     if (!token) {
         window.location.href = `${window.location.origin}/features/auth/Login.html`; 
@@ -12,7 +10,7 @@ export  async function validateToken() {
     }
 
     try {
-        const response = await fetch(`${API_URL}/validate-token`, {
+        const response = await fetch(`${API_URL}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

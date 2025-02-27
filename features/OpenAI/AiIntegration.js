@@ -1,4 +1,4 @@
-const apiBaseUrl = process.env.API_BASE_URL+"/ai";
+const apiBaseUrl = "https://appointment-management-system-backend.onrender.com/api/ai";
 
 let userId = localStorage.getItem("userId");
 
