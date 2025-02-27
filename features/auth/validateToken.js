@@ -3,6 +3,8 @@ const API_URL = "https://appointment-management-system-backend.onrender.com/api/
 export  async function validateToken() {
     
     const token = localStorage.getItem("token");
+    console.log(token);
+    
 
     if (!token) {
         window.location.href = `${window.location.origin}/features/auth/Login.html`; 
@@ -23,14 +25,14 @@ export  async function validateToken() {
         if (response.ok && data.valid) {
             return true;
         } else {
-            localStorage.removeItem("token");
-            window.location.href = `${window.location.origin}/index.html`;
+            // localStorage.removeItem("token");
+            // window.location.href = `${window.location.origin}/index.html`;
             return false;
         }
     } catch (error) {
-        console.error("Token validation failed:", error);
-        localStorage.removeItem("token");
-        window.location.href = `${window.location.origin}/index.html`;
-        return false;
+        // console.error("Token validation failed:", error);
+        // localStorage.removeItem("token");
+        // window.location.href = `${window.location.origin}/index.html`;
+        // return false;
     }
 }
