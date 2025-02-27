@@ -55,6 +55,7 @@ nav ul li a:hover {
     display: flex;
     width: 100%;
     height: calc(100vh - 60px); /* Full height minus navbar */
+    margin-top: 60px; /* Add margin to account for the fixed navbar */
 }
 
 /* Image on the left */

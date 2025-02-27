@@ -1,10 +1,28 @@
 const API_URL = "https://appointment-management-system-backend.onrender.com/api/appointments";
 
-document.querySelector("form").addEventListener("submit", async function(event) {
+// Disable today's date and previous dates
+document.addEventListener("DOMContentLoaded", function () {
+    const dateInput = document.getElementById("date");
+
+    // Get tomorrow's date in YYYY-MM-DD format
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1); // Add one day to today's date
+
+    const year = tomorrow.getFullYear();
+    const month = String(tomorrow.getMonth() + 1).padStart(2, "0"); // Add leading zero if needed
+    const day = String(tomorrow.getDate()).padStart(2, "0"); // Add leading zero if needed
+    const minDate = `${year}-${month}-${day}`;
+
+    // Set the minimum date for the input field
+    dateInput.setAttribute("min", minDate);
+});
+
+document.querySelector("form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     // Retrieve form values
-    const token = localStorage.getItem("token"); 
+    const token = localStorage.getItem("token");
     const specialist = document.getElementById("specialist").value;
     const date = document.getElementById("date").value;
     const hour = document.getElementById("hour").value;
@@ -18,22 +36,14 @@ document.querySelector("form").addEventListener("submit", async function(event) 
     // Convert the selected date and time into a Date object
     const selectedDateTime = new Date(`${date}T${hour}:00.000Z`);
 
-    // Get the current date and time
-    const currentDateTime = new Date();
-
-    // Ensure the selected date is in the future
-    if (selectedDateTime <= currentDateTime) {
-        alert("❌ You can only book appointments for future dates and times.");
-        return;
-    }
-
+    
     // Format the selected date and time as an ISO string for the API
     const dateTime = selectedDateTime.toISOString();
 
     // Prepare the appointment data
     const appointmentData = {
         medicalField: specialist,
-        dateTime: dateTime
+        dateTime: dateTime,
     };
 
     try {
@@ -42,13 +52,13 @@ document.querySelector("form").addEventListener("submit", async function(event) 
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
+                "Authorization": `Bearer ${token}`,
             },
-            body: JSON.stringify(appointmentData)
+            body: JSON.stringify(appointmentData),
         });
 
         // Parse the response
-        const data = await response.json(); 
+        const data = await response.json();
 
         // Handle success or failure
         if (response.ok) {
