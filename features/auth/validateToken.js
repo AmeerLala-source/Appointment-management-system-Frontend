@@ -1,4 +1,4 @@
-const API_URL = "https://appointment-management-system-backend.onrender.com/"; 
+const API_URL = "https://appointment-management-system-backend.onrender.com/api/auth"; 
 
 export  async function validateToken() {
     
@@ -10,7 +10,7 @@ export  async function validateToken() {
     }
 
     try {
-        const response = await fetch(`${API_URL}`, {
+        const response = await fetch(`${API_URL}/validate-token`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -23,14 +23,14 @@ export  async function validateToken() {
         if (response.ok && data.valid) {
             return true;
         } else {
-            // localStorage.removeItem("token");
-            // window.location.href = `${window.location.origin}/index.html`;
+            localStorage.removeItem("token");
+            window.location.href = `${window.location.origin}/index.html`;
             return false;
         }
     } catch (error) {
-        // console.error("Token validation failed:", error);
-        // localStorage.removeItem("token");
-        // window.location.href = `${window.location.origin}/index.html`;
-        // return false;
+        console.error("Token validation failed:", error);
+        localStorage.removeItem("token");
+        window.location.href = `${window.location.origin}/index.html`;
+        return false;
     }
 }
