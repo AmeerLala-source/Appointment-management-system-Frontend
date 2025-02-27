@@ -1,4 +1,4 @@
-
+const API_URL = "https://appointment-management-system-backend.onrender.com/api/appointments";
 
 document.querySelector("form").addEventListener("submit", async function(event) {
     event.preventDefault();
@@ -21,7 +21,7 @@ document.querySelector("form").addEventListener("submit", async function(event) 
     };
 
     try {
-        const response = await fetch("http://localhost:5000/api/appointments", {
+        const response = await fetch(API_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -1,3 +1,4 @@
+const API_URL = "https://appointment-management-system-backend.onrender.com/api/chat";
 document.getElementById("appointment-form").addEventListener("submit", function (e) {
     e.preventDefault();
     alert("Your appointment has been booked!");
@@ -15,7 +16,7 @@ async function sendMessage() {
 
     // Send request to backend
     try {
-        const response = await fetch("http://localhost:5000/chat", {
+        const response = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: userInput }),

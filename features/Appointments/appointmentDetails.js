@@ -1,4 +1,4 @@
-const API_URL = process.env.API_BASE_URL+"/appointments";
+const API_URL = "https://appointment-management-system-backend.onrender.com/api/appointments";
 
 // Function to fetch appointments from the backend
 async function fetchAppointments() {

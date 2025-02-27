@@ -1,4 +1,4 @@
-const API_URL = process.env.API_BASE_URL+"/auth"; // Define your backend API URL
+const API_URL = "https://appointment-management-system-backend.onrender.com/api/auth"; 
 
 export  async function validateToken() {
     
